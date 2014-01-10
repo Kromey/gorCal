@@ -1,0 +1,57 @@
+table.goreanCalendar
+{
+	margin: 2px;
+	border-collapse: collapse;
+	float: left;
+	font-size: 15px;
+}
+
+table.goreanCalendar th,
+table.goreanCalendar td
+{
+	background-color: #8F6700;
+	border: 1px solid black;
+	padding: 1px;
+	margin: 0px;
+	text-align: center;
+}
+
+table.goreanCalendar span.earthYear
+{
+	font-weight: normal;
+	font-size: 70%;
+}
+
+table.goreanCalendar td.spacer
+{
+	border: none;
+	background-color: transparent;
+}
+
+table.goreanCalendar th.monthHeader
+{
+	border-top-width: 2px;
+	border-left-width: 2px;
+	border-bottom-width: 2px;
+}
+
+table.goreanCalendar td.monthBorder,
+table.goreanCalendar th.monthBorder
+{
+	border-left-width: 2px;
+}
+
+table.goreanCalendar tr.handBorder td,
+table.goreanCalendar tr.handBorder th
+{
+	border-top-width: 2px;
+	border-bottom-width: 2px;
+}
+
+table.goreanCalendar td.currentDate
+{
+	background-color: #C29A06;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 95%;
+}
