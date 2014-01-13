@@ -5,7 +5,7 @@ include_once('gorCal.php');
 <html>
 <head>
 <title>Gorean Time/Date</title>
-<script type="text/javascript" src="gor.js"></script>
+<script type="text/javascript" src="gorClock.js"></script>
 <link rel="stylesheet" href="gorCal.css" />
 <style type="text/css">
 body
