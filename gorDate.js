@@ -35,16 +35,16 @@ function gorDate(obj)
 		if(0 == week)
 		{
 			//Waiting Hand
-			obj.innerHTML = 'The '+(day+1)+' day of the Waiting Hand';
+			obj.innerHTML = 'The '+ordSuffix(day+1)+' day of the Waiting Hand';
 		} else {
 			//Leap Year
 			obj.innerHTML = 'Leap Year';
 		}
 	} else if(5 == week) {
 		//Passage Hand
-		obj.innerHTML = 'The '+(day+1)+' day of the '+(month+1)+' Passage Hand';
+		obj.innerHTML = 'The '+ordSuffix(day+1)+' day of the '+ordSuffix(month+1)+' Passage Hand';
 	} else {
-		obj.innerHTML = 'The '+(day+1)+' day of the '+(week+1)+' week of the '+(month+1)+' month';
+		obj.innerHTML = 'The '+ordSuffix(day+1)+' day of the '+ordSuffix(week+1)+' week of the '+ordSuffix(month+1)+' month';
 	}
 }
 
@@ -65,4 +65,32 @@ function getDaysToDate(now)
 function getIsLeapYear(year)
 {
 	return ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0);
+}
+
+function ordSuffix(n)
+{
+	if(20 <= n)
+	{
+		//For numbers above the teens, we care only for the last digit
+		d = n % 10;
+	} else {
+		d = n;
+	}
+
+	switch(d)
+	{
+		case 1:
+			suffix = 'st';
+			break;
+		case 2:
+			suffix = 'nd';
+			break;
+		case 3:
+			suffix = 'rd';
+			break;
+		default:
+			suffix = 'th';
+	}
+
+	return n+suffix;
 }
