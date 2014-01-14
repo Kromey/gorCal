@@ -35,17 +35,22 @@ function gorDate(obj)
 		if(0 == week)
 		{
 			//Waiting Hand
-			obj.innerHTML = 'The '+ordSuffix(day+1)+' day of the Waiting Hand';
+			obj.innerHTML = 'The '+ordSuffix(day+1)+' day of the Waiting Hand of '+getGoreanYear(year);
 		} else {
 			//Leap Year
-			obj.innerHTML = 'Leap Year';
+			obj.innerHTML = 'Leap Year of '+getGoreanYear(year);
 		}
 	} else if(5 == week) {
 		//Passage Hand
-		obj.innerHTML = 'The '+ordSuffix(day+1)+' day of the '+ordSuffix(month+1)+' Passage Hand';
+		obj.innerHTML = 'The '+ordSuffix(day+1)+' day of the '+ordSuffix(month+1)+' Passage Hand of '+getGoreanYear(year);
 	} else {
-		obj.innerHTML = 'The '+ordSuffix(day+1)+' day of the '+ordSuffix(week+1)+' week of the '+ordSuffix(month+1)+' month';
+		obj.innerHTML = 'The '+ordSuffix(day+1)+' day of the '+ordSuffix(week+1)+' week of the '+ordSuffix(month+1)+' month of '+getGoreanYear(year);
 	}
+}
+
+function getGoreanYear(year)
+{
+	return numberFormat(year + 8150)+' CA';
 }
 
 function getDaysToDate(now)
@@ -65,6 +70,23 @@ function getDaysToDate(now)
 function getIsLeapYear(year)
 {
 	return ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0);
+}
+
+function numberFormat(n)
+{
+	var f = '';
+
+	while(n > 0)
+	{
+		f = (n%1000)+f;
+		n = Math.floor(n/1000);
+		if(n > 0)
+		{
+			f = ','+f;
+		}
+	}
+
+	return f;
 }
 
 function ordSuffix(n)

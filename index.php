@@ -27,7 +27,8 @@ h1,h2
 }
 
 #gorclock,
-#gordate
+#gordate,
+#gordatejs
 {
 	font-size: 35px;
 	color: #000000;
