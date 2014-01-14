@@ -27,8 +27,7 @@ h1,h2
 }
 
 #gorclock,
-#gordate,
-#gordatejs
+#gordate
 {
 	font-size: 35px;
 	color: #000000;
@@ -58,7 +57,7 @@ h1,h2
 }
 </style>
 </head>
-<body onload="startGorClock();gorDate('gordatejs');">
+<body onload="startGorClock();gorDate('gordate');">
 
 <div id="time">
 <h2>Your Local Time on Gor</h2>
@@ -84,8 +83,7 @@ to the day, rather than fixing the length of an Ihn and converting from that.
 <div id="date">
 <h2>Today's Date on Gor</h2>
 <div id="gordatecontainer">
-	<div id="gordate"><?php $cal = new gorCal(); $cal->printDate(); ?></div>
-	<div id="gordatejs"></div>
+	<div id="gordate"></div>
 </div>
 <div id="earthdatecontainer">
 	Earth Date
@@ -120,14 +118,8 @@ to this planet.
 </div>
 <?php
 echo "<br />\n";
+$cal = new gorCal();
 $cal->printCalendar(3, 4);
-
-for($i = 1; $i < 0; $i++)
-{
-	$cal2 = new gorCal("1 March 2016 +{$i} days");
-	$cal2->printDate();
-	echo "<br />\n";
-}
 ?>
 </div>
 
