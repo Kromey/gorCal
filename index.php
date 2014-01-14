@@ -6,6 +6,7 @@ include_once('gorCal.php');
 <head>
 <title>Gorean Time/Date</title>
 <script type="text/javascript" src="gorClock.js"></script>
+<script type="text/javascript" src="gorDate.js"></script>
 <link rel="stylesheet" href="gorCal.css" />
 <style type="text/css">
 body
@@ -56,7 +57,7 @@ h1,h2
 }
 </style>
 </head>
-<body onload="startGorClock()">
+<body onload="startGorClock();gorDate('gordatejs');">
 
 <div id="time">
 <h2>Your Local Time on Gor</h2>
@@ -83,6 +84,7 @@ to the day, rather than fixing the length of an Ihn and converting from that.
 <h2>Today's Date on Gor</h2>
 <div id="gordatecontainer">
 	<div id="gordate"><?php $cal = new gorCal(); $cal->printDate(); ?></div>
+	<div id="gordatejs"></div>
 </div>
 <div id="earthdatecontainer">
 	Earth Date
