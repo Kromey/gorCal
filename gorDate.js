@@ -29,7 +29,23 @@ function gorDate(obj)
 	var week = Math.floor((days - month*30)/5);
 	var day = days % 5;
 
-	obj.innerHTML = day + ' of ' + week + ' of ' + month;
+	if(12 == month)
+	{
+		//Waiting Hand, or Leap Year
+		if(0 == week)
+		{
+			//Waiting Hand
+			obj.innerHTML = 'The '+(day+1)+' day of the Waiting Hand';
+		} else {
+			//Leap Year
+			obj.innerHTML = 'Leap Year';
+		}
+	} else if(5 == week) {
+		//Passage Hand
+		obj.innerHTML = 'The '+(day+1)+' day of the '+(month+1)+' Passage Hand';
+	} else {
+		obj.innerHTML = 'The '+(day+1)+' day of the '+(week+1)+' week of the '+(month+1)+' month';
+	}
 }
 
 function getDaysToDate(now)
