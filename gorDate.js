@@ -1,12 +1,18 @@
 
-function gorDate(obj)
+function gorDate(obj, date)
 {
 	if('string' == typeof obj)
 	{
 		obj = document.getElementById(obj);
 	}
 
-	var now = new Date();
+	if('undefined' == typeof date || 'object' != typeof date)
+	{
+		var now = new Date();
+	} else {
+		var now = date;
+	}
+
 	var days = getDaysToDate(now);
 	var equinox = getDaysToDate(new Date(now.getFullYear(), 2, 20));
 
